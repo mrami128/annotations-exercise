@@ -1,10 +1,10 @@
-/**
- * This source file is subject to the license that is bundled with this package in the file LICENSE.
- */
+
+
 import java.util.ArrayList;
 import java.util.List;
 
-public class Author extends Person {
+ @SuppressWarnings("unchecked")        //----------->
+    public class Author extends Person {
     private List books;
 
     public Author(String firstName, String lastName) {
@@ -12,11 +12,11 @@ public class Author extends Person {
         books = new ArrayList();
     }
 
-    /**
-     * @deprecated Use addBook instead
+    /*
+     * @deprecated Use addBook instead   versus getBooks
      */
-    @Deprecated
-    public List<String> getBooks() {
+
+    public List<String> addBook() {
         return books;
     }
 
@@ -28,7 +28,6 @@ public class Author extends Person {
         books.add(book);
     }
 
-    @Override
     public String sortName() {
         return String.format("%s, %s", lastName, firstName);
     }
